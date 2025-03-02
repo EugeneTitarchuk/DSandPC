@@ -6,7 +6,7 @@ namespace DSPC.SyllabusParser
     {
         public EducationalComponent[] Load()
         {
-            //Thread.Sleep(5000);
+            Thread.Sleep(5000);
 
             return [
                 new EducationalComponent { Code = "ОК 1", Name = "Українська мова та етнокульторологія" },

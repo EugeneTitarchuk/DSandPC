@@ -7,14 +7,7 @@
 //{
 //    public partial class DashboardViewModel : ObservableObject
 //    {
-//        private BackgroundWorker _backgroundWorker = new();
-
-//        public DashboardViewModel()
-//        {
-//            _backgroundWorker.DoWork += LoadInBackground;
-//        }
-
-//        private void LoadInBackground(object? sender, DoWorkEventArgs e)
+//        private void LoadInBackground()
 //        {
 //            var parser = new Parser();
 
@@ -37,7 +30,9 @@
 //        [RelayCommand]
 //        private void OnLoad()
 //        {
-//            _backgroundWorker.RunWorkerAsync();
+//            var thread = new Thread(LoadInBackground);
+
+//            thread.Start();
 //        }
 //    }
 //}
