@@ -1,6 +1,6 @@
 ﻿namespace DSPC.SyllabusParser.Models
 {
-    internal class EducationalComponent
+    public class EducationalComponent
     {
         public string? Name { get; set; }
         public string? Code { get; set; }

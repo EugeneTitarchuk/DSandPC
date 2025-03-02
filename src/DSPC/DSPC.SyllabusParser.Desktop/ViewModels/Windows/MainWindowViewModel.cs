@@ -6,7 +6,7 @@ namespace DSPC.SyllabusParser.Desktop.ViewModels.Windows
     public partial class MainWindowViewModel : ObservableObject
     {
         [ObservableProperty]
-        private string _applicationTitle = "WPF UI - DSPC.SyllabusParser.Desktop";
+        private string _applicationTitle = "Syllabus Management";
 
         [ObservableProperty]
         private ObservableCollection<object> _menuItems = new()

@@ -1,0 +1,8 @@
+﻿{
+  "title": {
+    "type": "table",
+    "prefixes": [
+      "some prefit"
+    ]
+  }
+}

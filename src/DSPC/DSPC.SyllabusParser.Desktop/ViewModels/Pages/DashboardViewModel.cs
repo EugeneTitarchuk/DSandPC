@@ -1,19 +1,26 @@
-﻿using System.Collections.ObjectModel;
+﻿using DSPC.SyllabusParser.Models;
+using System.Collections.ObjectModel;
 
 namespace DSPC.SyllabusParser.Desktop.ViewModels.Pages
 {
     public partial class DashboardViewModel : ObservableObject
     {
         [ObservableProperty]
-        private int _counter = 0;
-
-        [ObservableProperty]
-        private ObservableCollection<Product> _productsCollection = GenerateProducts();
+        private ObservableCollection<EducationalComponent> _productsCollection = new ObservableCollection<EducationalComponent>();
 
         [RelayCommand]
-        private void OnCounterIncrement()
+        private void OnLoad()
         {
-            Counter++;
+            var parser = new Parser();
+
+            ProductsCollection.Clear();
+
+            var items = parser.Load();
+
+            foreach (var item in items)
+            {
+                ProductsCollection.Add(item);
+            }
         }
     }
 }

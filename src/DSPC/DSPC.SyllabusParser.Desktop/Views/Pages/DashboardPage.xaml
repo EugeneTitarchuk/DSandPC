@@ -14,24 +14,39 @@
     ui:Design.Background="{DynamicResource ApplicationBackgroundBrush}"
     ui:Design.Foreground="{DynamicResource TextFillColorPrimaryBrush}"
     Foreground="{DynamicResource TextFillColorPrimaryBrush}"
+    ScrollViewer.CanContentScroll="False"
     mc:Ignorable="d">
 
-    <Grid VerticalAlignment="Top">
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="Auto" />
-            <ColumnDefinition Width="Auto" />
-        </Grid.ColumnDefinitions>
-
+    <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+      
         <ui:Button
-            Grid.Column="0"
-            Command="{Binding ViewModel.CounterIncrementCommand, Mode=OneWay}"
-            Content="Click me!"
-            Icon="Fluent24" />
-        <TextBlock
-            Grid.Column="1"
-            Margin="12,0,0,0"
-            VerticalAlignment="Center"
-            Text="{Binding ViewModel.Counter, Mode=OneWay}" />
-        <ui:DataGrid Height="400" ItemsSource="{Binding ViewModel.ProductsCollection, Mode=TwoWay}" />
+            Grid.Row="0"
+            Command="{Binding ViewModel.LoadCommand, Mode=OneWay}"
+            Content="Load"
+            Icon="Fluent24" Margin="0, 0, 0, 10" />
+
+        <ui:DataGrid 
+            VerticalAlignment="Stretch"
+            Grid.Row="1"
+            IsReadOnly="True"
+            AutoGenerateColumns="False"
+            SelectionMode="Single"
+            SelectionUnit="FullRow"
+            RowStyle="{StaticResource CustomGridRowStyle}"
+            VerticalScrollBarVisibility="Auto"
+            ItemsSource="{Binding ViewModel.ProductsCollection, Mode=TwoWay}"
+            Margin="0, 0, 0, 28">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding Code}" Header="Component Code" Width="150"/>
+
+                <DataGridTextColumn Binding="{Binding Name}" Header="Subject Name" Width="Auto"/>
+            </DataGrid.Columns>
+        </ui:DataGrid>
+
+
     </Grid>
 </Page>

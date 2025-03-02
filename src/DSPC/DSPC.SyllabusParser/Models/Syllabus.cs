@@ -6,8 +6,12 @@ using System.Threading.Tasks;
 
 namespace DSPC.SyllabusParser.Models
 {
-    internal class Syllabus
+    public class Syllabus
     {
+        public string Name { get; set; }
+
+        public string Description { get; set; }
+
 
     }
 }

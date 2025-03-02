@@ -4,7 +4,7 @@
     <OutputType>WinExe</OutputType>
     <TargetFramework>net8.0-windows</TargetFramework>
     <ApplicationManifest>app.manifest</ApplicationManifest>
-    <ApplicationIcon>vnau-icon.ico</ApplicationIcon>
+    <ApplicationIcon>Assets\vnau-icon.ico</ApplicationIcon>
     <UseWPF>true</UseWPF>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
@@ -16,10 +16,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Content Include="vnau-icon.ico" />
-  </ItemGroup>
-
-  <ItemGroup>
     <Resource Include="Assets\vnau-icon-256.png" />
   </ItemGroup>
 
@@ -27,6 +23,10 @@
     <PackageReference Include="WPF-UI" Version="3.0.4" />
     <PackageReference Include="Microsoft.Extensions.Hosting" Version="8.0.0 " />
     <PackageReference Include="CommunityToolkit.Mvvm" Version="8.2.2 " />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\DSPC.SyllabusParser\DSPC.SyllabusParser.csproj" />
   </ItemGroup>
 
   <ItemGroup>
