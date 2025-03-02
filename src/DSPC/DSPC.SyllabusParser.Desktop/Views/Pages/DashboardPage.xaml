@@ -43,7 +43,7 @@
             <DataGrid.Columns>
                 <DataGridTextColumn Binding="{Binding Code}" Header="Component Code" Width="150"/>
 
-                <DataGridTextColumn Binding="{Binding Name}" Header="Subject Name" Width="Auto"/>
+                <DataGridTextColumn Binding="{Binding Name}" Header="Subject Name" Width="1*"/>
             </DataGrid.Columns>
         </ui:DataGrid>
 

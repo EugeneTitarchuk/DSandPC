@@ -13,9 +13,9 @@ namespace DSPC.SyllabusParser.Desktop.ViewModels.Pages
         {
             var parser = new Parser();
 
-            ProductsCollection.Clear();
+            var items = parser.Load(); // long task
 
-            var items = parser.Load();
+            ProductsCollection.Clear();
 
             foreach (var item in items)
             {

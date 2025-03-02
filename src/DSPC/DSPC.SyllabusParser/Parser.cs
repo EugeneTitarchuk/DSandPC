@@ -8,6 +8,32 @@ namespace DSPC.SyllabusParser
         {
             Thread.Sleep(5000);
 
+            return LoadInternal();
+        }
+
+        public async Task<EducationalComponent[]> LoadAsync()
+        {
+            await Task.Delay(5000);
+
+            return LoadInternal();
+        }
+
+        public async Task<EducationalComponent[]> LoadAsync(CancellationToken cancellationToken)
+        {
+            try
+            {
+                await Task.Delay(5000, cancellationToken);
+
+                return LoadInternal();
+            }
+            catch (Exception ex)
+            {
+                return [];
+            }
+        }
+
+        private EducationalComponent[] LoadInternal()
+        {
             return [
                 new EducationalComponent { Code = "ОК 1", Name = "Українська мова та етнокульторологія" },
                 new EducationalComponent { Code = "ОК 2", Name = "Філософія" },
@@ -48,12 +74,6 @@ namespace DSPC.SyllabusParser
                 new EducationalComponent { Code = "ОК 37", Name = "Підготовка і захист кваліфікаційної роботи" },
             ];
         }
-
-        public async Task<EducationalComponent[]> LoadAsync()
-        {
-            await Task.Delay(5000);
-
-            return Load();
-        }
+        
     }
 }
