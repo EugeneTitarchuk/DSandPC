@@ -13,7 +13,7 @@ namespace DSPC.SyllabusParser
 
         public async Task<EducationalComponent[]> LoadAsync()
         {
-            await Task.Delay(5000);
+            await Task.Delay(5000).ConfigureAwait(false);
 
             return LoadInternal();
         }
